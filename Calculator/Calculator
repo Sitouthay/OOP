@@ -88,67 +88,84 @@ public class Calculator implements ActionListener {
 			System.exit(0);
 		
 		if(e.getSource()==b0) {
-			p1 = tf.getText()+ "0";
+            p1 = tf.getText() + "0";
 			tf.setText(p1);
 		}
 		if(e.getSource()==b1) {
-			p1 = tf.getText()+ "1";
+            p1 = tf.getText() + "1";
 			tf.setText(p1);
 		}
 		if(e.getSource()==b2) {
-			p1 = tf.getText()+ "2";
+            p1 = tf.getText() + "2"; 
 			tf.setText(p1);
 		}
 		if(e.getSource()==b3) {
-			p1 = tf.getText()+ "3";
+            p1 = tf.getText() + "3";
 			tf.setText(p1);
 		}
 		if(e.getSource()==b4) {
-			p1 = tf.getText()+ "4";
+            p1 = tf.getText() + "4";
 			tf.setText(p1);
 		}
 		if(e.getSource()==b5) {
-			p1 = tf.getText()+ "5";
+            p1 = tf.getText() + "5";
 			tf.setText(p1);
 		}
 		if(e.getSource()==b6) {
-			p1 = tf.getText()+ "6";
+            p1 = tf.getText() + "6";
 			tf.setText(p1);
 		}
 		if(e.getSource()==b7) {
-			p1 = tf.getText()+ "7";
+            p1 = tf.getText() + "7";
 			tf.setText(p1);
 		}
 		if(e.getSource()==b8) {
-			p1 = tf.getText()+ "8";
+            p1 = tf.getText() + "8";
 			tf.setText(p1);
 		}
 		if(e.getSource()==b9) {
-			p1 = tf.getText()+ "9";
+            p1 = tf.getText() + "9";
 			tf.setText(p1);
 		}
 		if(e.getSource()==plus) {
-			p2 = tf.getText()+ "";
-			tf.setText(p2);
+			p2 = tf.getText();
+			tf.setText("");
 			s = 1;
 		}
 		if(e.getSource()==minus) {
-			p2 = tf.getText()+ "";
-			tf.setText(p2);
+			p2 = tf.getText();
+			tf.setText("");
 			s = 2;
 		}
 		if(e.getSource()==multiphy) {
-			p2 = tf.getText()+ "";
-			tf.setText(p2);
+			p2 = tf.getText();
+			tf.setText("");
 			s = 3;
 		}
 		if(e.getSource()==devide) {
-			p2 = tf.getText()+ "";
-			tf.setText(p2);
+			p2 = tf.getText();
+			tf.setText("");
 			s = 4;
 		}
 		if(e.getSource()==equa) {
+            		p3 = tf.getText();
+            		if(s == 1){
+                	n = Integer.parseInt(p2)+Integer.parseInt(p3);
+                	tf.setText(String.valueOf(n));
+            	}
+           	if(s == 2){
+                	n = Integer.parseInt(p2)-Integer.parseInt(p3);
+                	tf.setText(String.valueOf(n));
+            	}
+            	if(s == 3){
+                	n = Integer.parseInt(p2)*Integer.parseInt(p3);
+                	tf.setText(String.valueOf(n));
+            	}
+            	if(s == 4){
+               		n = Integer.parseInt(p2)/Integer.parseInt(p3);
+                	tf.setText(String.valueOf(n));
+            	}
 			
-		}
+	}
     }
 }

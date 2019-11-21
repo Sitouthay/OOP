@@ -1,0 +1,58 @@
+import java.io.*;
+import java.util.*;
+
+public class SinhVien {
+	private String hoTen;
+	private int namSinh;
+	private double dtb;
+	
+	public SinhVien() {
+		
+	}
+	
+	public SinhVien(String hoTen, int namSinh, double dtb) {
+		this.hoTen = hoTen;
+		this.namSinh = namSinh;
+		this.dtb = dtb;
+	}
+	
+	public void hienThi() {
+		System.out.println("Ten: "+ hoTen + ", Nam Sinh: "+ namSinh + ", DTB: " + dtb);
+	}
+
+	@Override
+	public String toString() {
+		return hoTen + " - " + namSinh + " - " + dtb;
+	}
+	
+	public void ghiTep(String tenTep) {
+		try {
+			FileOutputStream f = new FileOutputStream(tenTep);
+			PrintWriter pw = new PrintWriter(f);
+			pw.println(this);
+			pw.close();
+		}catch(IOException e) {}
+	}
+	
+	public void docTep(String tenTep) {
+		try {
+			FileInputStream f = new FileInputStream(tenTep);
+			DataInputStream di = new DataInputStream(f);
+			String s = di.readLine();
+			StringTokenizer st = new StringTokenizer(s,"-");
+			hoTen = st.nextToken();
+			namSinh = Integer.parseInt(st.nextToken());
+			dtb = Double.parseDouble(st.nextToken());
+			di.close();
+
+		}catch(IOException e) {}
+	}
+	
+	public static void main(String[] args) {
+		SinhVien s = new SinhVien("Nguyen Van A", 1998, 7.5);
+		s.ghiTep("sv.txt");
+		
+		s.hienThi();
+	}
+	
+}

@@ -1,0 +1,13 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		DSSV k1 = new DSSV(20); SV s ;
+		s = new SVSP("Nguyen Van A", 2000, 7, "Phu Yen", 8);
+		k1.them(s);
+		s = new SVTH("Le Thi A", 1999, 6, "Tin", 10);
+		k1.them(s);
+		
+		k1.inDS();
+	}
+}

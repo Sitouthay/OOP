@@ -1,0 +1,45 @@
+import java.io.*;
+import java.util.Scanner;
+
+public class TepVanBan {
+
+	public static void main(String[] args) {
+		taoTep();
+		docTep();
+	}
+	
+	public static void taoTep() {
+		try {
+			FileOutputStream f = new FileOutputStream ("songuyen.txt");
+			PrintWriter pw = new PrintWriter(f);
+			for (int i = 1; i <= 100; ++i) {
+				int k = (int)(Math.random()*1000);
+				pw.print(k + " ");
+				
+				if(i == 10 || i == 20 || i == 30 || i == 40 || i == 50 || i == 60 || i == 70 || i == 80 || i == 90)
+					pw.println();
+			}
+			pw.close();
+		}catch(IOException e) {}
+	}
+	
+	public static void docTep() {
+		try {
+			FileInputStream fin = new FileInputStream("songuyen.txt");
+			FileOutputStream fout = new FileOutputStream("sochan.txt");
+			PrintWriter pw = new PrintWriter(fout);
+			Scanner sc = new Scanner(fin);
+			int d = 0;
+			for (int i = 1; i < 100; ++i) {
+				int k = sc.nextInt();
+				if(k % 2 == 0)
+					pw.print(k + " ");
+					d++;
+				if(d % 10 == 0)
+					pw.println();
+			}
+			pw.close();
+			fin.close();
+		}catch (IOException e) {}
+	}
+}
